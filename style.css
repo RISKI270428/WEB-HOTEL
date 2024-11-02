@@ -1,0 +1,182 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, p, a {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.navbar img {
+    height: 100px;
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh; /* Full screen height */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 300%; /* Adjust width based on the number of slides */
+}
+
+.slide {
+    width: 100vw;
+    flex-shrink: 0;
+    position: relative; /* Ensure children can be positioned absolutely */
+}
+
+.slide img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.slider-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+/* Floating Icon Container */
+.floating-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 900;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Lebih terang saat hover */
+}
+
+.options {
+    display: none; /* Secara default tidak ditampilkan */
+    position: absolute;
+    bottom: 60px; /* Atur jarak opsi dari ikon */
+    right: 0; /* Atur posisi opsi di sebelah kanan */
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.option {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.facility-content {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Jarak antara gambar dan teks */
+}
+
+.facility-content img {
+    width: 300px; /* Sesuaikan ukuran gambar */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px; /* Opsional: Membuat sudut gambar melengkung */
+}
+
+.icon img {
+    width: 60%;
+    height: 60%;
+}
+
+/* Section and Footer */
+section {
+    padding: 50px 30px;
+    text-align: center;
+}
+
+footer {
+    background-color: #f5f1f1;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .facility-content {
+        flex-direction: column; /* Stack images vertically */
+        align-items: center; /* Center align images */
+    }
+}
